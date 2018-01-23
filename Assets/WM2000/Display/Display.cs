@@ -6,8 +6,8 @@ public class Display : MonoBehaviour
     [SerializeField] Terminal connectedToTerminal;
 
     // TODO calculate these two if possible
-    [SerializeField] int charactersWide = 40;
-    [SerializeField] int charactersHigh = 14;
+    [SerializeField] int charactersWide = 60;
+    [SerializeField] int charactersHigh = 20;
 
     Text screenText;
 
@@ -30,6 +30,7 @@ public class Display : MonoBehaviour
     {
         if (connectedToTerminal)
         {
+            Debug.Log("charactersWide: " + charactersWide);
             screenText.text = connectedToTerminal.GetDisplayBuffer(charactersWide, charactersHigh);
         }
     }
