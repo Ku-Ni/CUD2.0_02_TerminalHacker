@@ -387,8 +387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedToTerminal: {fileID: 114578242904794280}
-  charactersWide: 40
-  charactersHigh: 12
+  charactersWide: 60
+  charactersHigh: 30
 --- !u!114 &114511547698080430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1373, y: 751}
+  m_ReferenceResolution: {x: 1400, y: 1080}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -431,7 +431,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 352bbc3b6aced404f8230cc7623347a9, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -514,10 +514,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 138991e1d9d76cc41b0a352f3d80b23f, type: 3}
-    m_FontSize: 39
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 43
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -525,23 +525,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Hit Play or Ctrl+P to turn me on.
-
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consequat
-    porta nunc porta laoreet. Nam tempor orci consequat ipsum volutpat, non tristique
-    neque viverra. Aenean sit amet sagittis lacus. Proin eu semper mi, ut tincidunt
-    dolor. Integer tortor felis, mollis vitae quam in, efficitur porta enim. Proin
-    sit amet commodo augue, accumsan mollis mi. Duis aliquam in diam sed tincidunt.
-    Aliquam ultrices eget ipsum at efficitur. Integer orci est, condimentum nec facilisis
-    ac, rutrum eu ex. Nullam sodales leo id bibendum dictum. Lorem ipsum dolor sit
-    amet, consectetur adipiscing elit. Pellentesque consequat porta nunc porta laoreet.
-    Nam tempor orci consequat ipsum volutpat, non tristique neque viverra. Aenean
-    sit amet sagittis lacus. Proin eu semper mi, ut tincidunt dolor. Integer tortor
-    felis, mollis vitae quam in, efficitur porta enim. Proin sit amet commodo augue,
-    accumsan mollis mi. Duis aliquam in diam sed tincidunt. Aliquam ultrices eget
-    ipsum at efficitur. Integer orci est, condimentum nec facilisis ac, rutrum eu
-    ex. Nullam sodales leo id bibendum dictum.'
+  m_Text: "\r\n===========================================================\r\n     _
+    \      __           __       __                __\r\n    | |     / ____ ______/
+    /____  / ____ _____  ____/ /\r\n    | | /| / / __ `/ ___/ __/ _ \\/ / __ `/ __
+    \\/ __  /\r\n    | |/ |/ / /_/ (__  / /_/  __/ / /_/ / / / / /_/ /\r\n    |__/|__/\\__,_/____/\\__/\\___/_/\\__,_/_/
+    /_/\\__,_/\r\n\r\n                __  __           __\r\n               / / /
+    ____ ______/ /_____  _____\r\n              / /_/ / __ `/ ___/ //_/ _ \\/ ___/\r\n
+    \            / __  / /_/ / /__/ ,< /  __/ /\r\n            /_/ /_/\\__,_/\\___/_/|_|\\___/_/\r\n\r\n===========================================================\r\n\r\npress
+    any key to start..."
 --- !u!222 &222462908678986682
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -574,9 +565,9 @@ Canvas:
   m_GameObject: {fileID: 1865490045461082}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 635.9
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -601,8 +592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -61, y: 92}
-  m_SizeDelta: {x: 838.87, y: 605.7}
+  m_AnchoredPosition: {x: -60.4, y: 104.9}
+  m_SizeDelta: {x: 849.4, y: 627.4}
   m_Pivot: {x: 0.5191488, y: 0.5969092}
 --- !u!224 &224308848339698518
 RectTransform:
@@ -641,7 +632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 1440, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224672789737061572
@@ -677,6 +668,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 1440, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}

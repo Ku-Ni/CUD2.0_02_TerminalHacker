@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -20,31 +21,29 @@ public class GameManager : MonoBehaviour {
 
 press any key to start...
 ";
-    private string passwordsFilePath = "data/passwords.xml";
-    private Dictionary<string,List<string>> passwords;
     private GameState gameState;
+    private PasswordManager passwordManager;
 
-    private enum GameState {
+    public enum GameState {
         START_MENU, GAME_ON, FINISH
     }
 
 	// Use this for initialization
 	void Start () {
-        loadPasswords();
-        loadMainMenu();
+        passwordManager = GameObject.FindObjectOfType<PasswordManager>();
+        LoadMainMenu();
 	}
 
-    private void loadPasswords() {
-        passwords = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>();
-    }
-
-    private void loadMainMenu() {
+    private void LoadMainMenu() {
         gameState = GameState.START_MENU;
         Terminal.WriteLine(logo);
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    internal GameState GetGameState() {
+        return gameState;
+    }
+    
+    internal void StartGame() {
+        throw new NotImplementedException();
+    }
 }
