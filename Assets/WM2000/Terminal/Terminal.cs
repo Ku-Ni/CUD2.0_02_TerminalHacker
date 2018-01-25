@@ -3,16 +3,19 @@ using System.Reflection;
 
 public class Terminal : MonoBehaviour
 {
-    DisplayBuffer displayBuffer;
-    InputBuffer inputBuffer;
+    private GameManager gameManager;
+    private DisplayBuffer displayBuffer;
+    private InputBuffer inputBuffer;
 
     static Terminal primaryTerminal;
 
     private void Awake()
     {
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+
         if (primaryTerminal == null) { primaryTerminal = this; } // Be the one
-        inputBuffer = new InputBuffer();
-        displayBuffer = new DisplayBuffer(inputBuffer);
+        inputBuffer = new InputBuffer(gameManager);
+        displayBuffer = new DisplayBuffer(inputBuffer, gameManager);
         inputBuffer.onCommandSent += NotifyCommandHandlers;
     }
 

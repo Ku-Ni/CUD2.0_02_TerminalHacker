@@ -39,7 +39,7 @@ public class PasswordManager : MonoBehaviour {
     /// </summary>
     /// <param name="level"></param>
     /// <returns></returns>
-    public List<string> GetPasswords(int level) {
+    public List<string> GetPasswords(string theme, int level) {
         List<string> passwords = new List<string>();
 
         passwords.Add("test1.l" + level);

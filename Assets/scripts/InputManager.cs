@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Game : MonoBehaviour {
+public class InputManager: MonoBehaviour {
 
     private GameManager gameManager;
 	// Use this for initialization
@@ -15,7 +15,9 @@ public class Game : MonoBehaviour {
 		
 	}
 
+    // runs after enter is pressed
     void OnUserInput(string input) {
+        Debug.Log("OnUserInput:" + input);
         switch (gameManager.GetGameState()) {
             case GameManager.GameState.START_MENU:
                 gameManager.StartGame();
