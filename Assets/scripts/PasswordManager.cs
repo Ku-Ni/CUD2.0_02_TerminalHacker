@@ -1,11 +1,14 @@
 ﻿using System;
-using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
 
 public class PasswordManager : MonoBehaviour {
+    public static char[] NON_ALPHA_CHARS = {'!','"','|','\\','%','£','^','&','*','(',')','_','-','+','=','$','>','<',',','.','?','/','`','¬','[',']','{','}',';',':','\'','@','#','~','"'};
+    public static System.Random rnd = new System.Random();
+
     private string passwordsFilePath = "data/passwords.xml";
     private List<Password> passwords;
 
@@ -13,6 +16,7 @@ public class PasswordManager : MonoBehaviour {
 	void Start () {
         Debug.Log("PasswordManager initialising...");
         passwords = LoadPasswords();
+        Debug.Log(passwords.Count + " passwords retrieved");
     }
 
 
@@ -40,13 +44,39 @@ public class PasswordManager : MonoBehaviour {
     /// <param name="level"></param>
     /// <returns></returns>
     public List<string> GetPasswords(string theme, int level) {
-        List<string> passwords = new List<string>();
+        Debug.Log("Retrieving theme " + theme + " passwords for level " + level);
+        IEnumerable<string> themedPasswords = from p in passwords
+                                              where p.Theme == theme 
+                                              select p.Word;
 
-        passwords.Add("test1.l" + level);
-        passwords.Add("test2.l" + level);
-        passwords.Add("test3.l" + level);
+        switch (level) {
+            case 1:
+                return RetrieveRandomPasswords(6, themedPasswords.Where(p => p.Length == 4).ToList());
+            case 2:
+                return RetrieveRandomPasswords(6, themedPasswords.Where(p => p.Length == 4).ToList());
+            case 3:
+                return RetrieveRandomPasswords(6, themedPasswords.Where(p => p.Length == 5).ToList());
+            case 4:
+                return RetrieveRandomPasswords(6, themedPasswords.Where(p => p.Length == 5).ToList());
+            case 5:
+                return RetrieveRandomPasswords(6, themedPasswords.Where(p => p.Length == 6).ToList());
+            default:
+                return RetrieveRandomPasswords(6, themedPasswords.Where(p => p.Length == 6).ToList());
+        }
+        
+    }
 
-        return passwords;
+    private List<string> RetrieveRandomPasswords(int numberOfPasswords, List<string> passwords) {
+        Debug.Log("Returning random " + numberOfPasswords + " out of "+passwords.Count()+" passwords from collection " + passwords.ToArray());
+        List<string> result = new List<string>();
+       
+        while (result.Count < numberOfPasswords) {
+            int random = rnd.Next(0, passwords.Count - 1);
+            result.Add(passwords[random]);
+            passwords.Remove(passwords[random]);
+        }
+        
+        return result;
     }
 
 
@@ -68,5 +98,17 @@ public class PasswordManager : MonoBehaviour {
         }
 
         return correctCharacters;
+    }
+
+
+    public static string GetRandomCharacters(int num) {
+        char[] resultChars = new char[num];
+        
+        for (int i = 0; i < resultChars.Length; i++) {
+            int random = rnd.Next(0, NON_ALPHA_CHARS.Length - 1);
+            resultChars[i] = NON_ALPHA_CHARS[random];
+        }
+
+        return new string(resultChars);
     }
 }

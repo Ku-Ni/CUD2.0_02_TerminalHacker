@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class DisplayBuffer {
+public class InputDisplayBuffer {
     private GameManager gameManager;
     List<string> logLines = new List<string>();
     InputBuffer inputBuffer;
     const float FLASH_INTERVAL = .5f;
 
 
-    public DisplayBuffer(InputBuffer inputBuffer, GameManager gameManager) {
+    public InputDisplayBuffer(InputBuffer inputBuffer, GameManager gameManager) {
         this.gameManager = gameManager;
         this.inputBuffer = inputBuffer;
         inputBuffer.onCommandSent += OnCommand;

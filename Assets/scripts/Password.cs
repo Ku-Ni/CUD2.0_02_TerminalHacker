@@ -2,7 +2,7 @@
 using System.Xml.Serialization;
 
 public class Password {
-    public string theme;
-    public string word;
-
+    public string Theme;
+    public string Word;
+    
 }

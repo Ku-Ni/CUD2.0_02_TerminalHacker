@@ -24,14 +24,17 @@ press Enter key to start...
 ";
 
     internal void LoadMainMenu() {
-        Terminal.WriteLine(logo);
+        Terminal.SetMenuDisplayText(logo);
     }
 
 
     internal void LoadPasswords(List<string> passwords) {
+        string passwordDisplayString = PasswordManager.GetRandomCharacters(5);
         foreach (string password in passwords) {
-            Terminal.WriteLine(password);
+            passwordDisplayString += password + PasswordManager.GetRandomCharacters(5);
         }
+
+        Terminal.SetPasswordHintDisplayText(passwordDisplayString);
     }
 
     internal void ClearScreen() {

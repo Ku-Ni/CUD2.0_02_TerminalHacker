@@ -33,7 +33,7 @@
             SendCommand(currentInputLine);
         }
         else {
-            if (gameManager.GetGameState() == GameManager.GameState.GAME_ON)
+            if (gameManager.GetGameState() == GameState.GAME_ON)
                 currentInputLine += c;
         }
     }

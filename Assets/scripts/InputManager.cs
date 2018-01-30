@@ -19,12 +19,12 @@ public class InputManager: MonoBehaviour {
     void OnUserInput(string input) {
         Debug.Log("OnUserInput:" + input);
         switch (gameManager.GetGameState()) {
-            case GameManager.GameState.START_MENU:
+            case GameState.START_MENU:
                 gameManager.StartGame();
                 break;
-            case GameManager.GameState.GAME_ON:
+            case GameState.GAME_ON:
                 break;
-            case GameManager.GameState.FINISH:
+            case GameState.FINISH:
                 break;
             default:
                 throw new UnityException("Invalid GameState: " + gameManager.GetGameState());
